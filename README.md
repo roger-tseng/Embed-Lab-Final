@@ -41,14 +41,14 @@ RSSI distance method requires the received signal strength from the Bluetooth an
 strength would decay as the distance between transmitter and receiver increase. Thus, we can build a decaying 
 model and use the RSSI value to estimates the user’s distance respect to the anchor point. 
 
-<img src="./pic/Decaying.png">
+<img src="./pic/Decaying.PNG">
 
 We use the mainstream logarithmic distance path-loss model to calculate the distance from the RSSI value. 
 The mathematical decaying model is expressed as below. `d` is the distance between the transmitter and 
 the receiver, and `n` is a decaying factor related to the specific wireless transmission environment. The 
 initialization process is essential to find the decaying factor `n`. 
 
-(距離公式)
+<img src="./pic/Formula.PNG">
 
 ##### RSSI Variation
 Our model assumes that the RSSI value is only dependent on the distance between the two devices. However, 
@@ -64,14 +64,13 @@ eliminate the large variation. The Kalman filter is a state estimator that makes
 noisy measurements. The key is that it takes the history values as well as the uncertainty of measurements 
 into account. 
 
-(機率圖 大K小K)
+<img src="./pic/HighKalmanGain.PNG">
+<img src="./pic/LowKalmanGain.PNG">
 
 ##### Triangulation
 After we obtain the distance from each AP with known location, we can do the triangulation to find the 
 coordinate of the user. We use `scipy.optimize` library to find the optimized coordinate and minimize 
 the error.
-
-(放MATLAB圖)
 
 ##### MQTT
 We use MQTT for the communication between Rpi and the server. MQTT is a publish-subscribe network 
@@ -84,7 +83,7 @@ In other words, it allows us to differentiate the message from different Rpi sim
 subscriber can subscribe to multiple topic at the same time, and the publisher can publish their message 
 no matter the subscriber exist or not. This allows a great flexibility for our setting. 
 
-(放MQTT圖)
+<img src="./pic/Mqtt.PNG">
 
 ##### Localization Procedure
 In conclusion, we set four Rpi at each corner of the room. Each AP would publish time stamp and the 
@@ -98,8 +97,7 @@ distance pair.
 Moreover, the average window of three values is used for post-processing on calculated result.
 
 ##### Path Following Result
-
- 
+<img src="./pic/PathFollowing.PNG">
 
 #### 2. STM Control
 (資料處理)
