@@ -71,6 +71,8 @@ After we obtain the distance from each AP with known location, we can do the tri
 coordinate of the user. We use `scipy.optimize` library to find the optimized coordinate and minimize 
 the error.
 
+(放MATLAB圖)
+
 ##### MQTT
 We use MQTT for the communication between Rpi and the server. MQTT is a publish-subscribe network 
 protocol that transports messages between devices, which is a great choice for communication between 
@@ -82,9 +84,13 @@ In other words, it allows us to differentiate the message from different Rpi sim
 subscriber can subscribe to multiple topic at the same time, and the publisher can publish their message 
 no matter the subscriber exist or not. This allows a great flexibility for our setting. 
 
+(放MQTT圖)
+
+##### Localization Procedure
 In conclusion, we set four Rpi at each corner of the room. Each AP would publish time stamp and the 
-calculated distance to every 4 sec. When the server receives four distances with the same time stamp, it 
-would do triangulation to find coordinate. Average window = 3 for post-processing on calculated coordinate
+calculated distance to the server every 4 sec. When the server receives four distances with the same time 
+stamp, it would do triangulation and find the coordinate. Average window of three values are used for post-
+processing on calculated result.
 
 
  
