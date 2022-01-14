@@ -88,17 +88,22 @@ no matter the subscriber exist or not. This allows a great flexibility for our s
 
 ##### Localization Procedure
 In conclusion, we set four Rpi at each corner of the room. Each AP would publish time stamp and the 
-calculated distance to the server every 4 sec. When the server receives four distances with the same time 
-stamp, it would do triangulation and find the coordinate. Average window of three values are used for post-
-processing on calculated result.
+calculated distance to the server every four seconds. When the server receives four distances with the 
+same time stamp, it would do triangulation and find the coordinate. 
 
+In other words, the syncronization among four Rpi are achieved by only send the message when the time 
+stamp is the multiples of 4. So that the server can check the time stamp to find the corresponding 
+distance pair. 
+
+Moreover, the average window of three values is used for post-processing on calculated result.
 
  
 
 #### 2. STM Control
+(資料處理)
 
 #### 3. 3D Modeling
-
+(port 解法)
 
 ### Reference
 [1] Chai, Song & An, Renbo & Du, Zhengzhong. (2016). "An Indoor Positioning Algorithm using Bluetooth Low Energy RSSI." 10.2991/amsee-16.2016.72. 
