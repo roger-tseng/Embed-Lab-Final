@@ -108,8 +108,11 @@ Moreover, the average window of three values is used for post-processing on calc
 (port 解法)
 
 ### Reference
-[1] Chai, Song & An, Renbo & Du, Zhengzhong. (2016). "An Indoor Positioning Algorithm using Bluetooth Low Energy RSSI." 10.2991/amsee-16.2016.72. 
-[2] Kalman Filter: https://www.kalmanfilter.net/kalman1d.html
+[1] Chai, Song & An, Renbo & Du, Zhengzhong. (2016). "An Indoor Positioning Algorithm using Bluetooth Low Energy RSSI," 10.2991/amsee-16.2016.72. 
+
+[2] Xiuyan Zhu, Yuan Feng. (2013) "RSSI-based Algorithm for Indoor Localization, Communications and Network," Vol.5 No.2B
+
+[3] Kalman Filter: https://www.kalmanfilter.net/kalman1d.html
 
 
 
