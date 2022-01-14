@@ -25,6 +25,7 @@ the user can directly walk inside the new house and place the furniture at their
 ### V. Contents
 
 #### 1. Interior Positioning 
+
 ##### Indoor positioning
 Compared with outdoor localization, the difficulty of indoor localization lies in the higher precision 
 requirement since we need to differentiate two points with small distance, which make it impractical to use 
@@ -38,14 +39,27 @@ model and use the RSSI value to estimates the user’s distance respect to the a
 
 (放隨距離decay的圖片)
 
-We use the logarithmic distance path-loss model to calculate the distance from the RSSI value. The mathematical 
-decaying model is expressed as below. `d` is the distance between the transmitter and the receiver, and `n` is 
-a decaying factor related to the specific wireless transmission environment. The initialization process is 
-essential to find the decaying factor `n`. 
+We use the mainstream logarithmic distance path-loss model to calculate the distance from the RSSI value. The 
+mathematical decaying model is expressed as below. `d` is the distance between the transmitter and the receiver, 
+and `n` is a decaying factor related to the specific wireless transmission environment. The initialization 
+process is essential to find the decaying factor `n`. 
 
 (距離公式)
 
-##### RSSI Distance Method
+##### RSSI Variation
+The variation of the received RSSI are unstable even in a well-controlled indoor scenario due to multipath 
+fading. There exist multiple different path for the signal to transmit from the transmitter to the receiver, 
+which may cause some interference so the actual received strength might be quite different from the calculated 
+model. Thus, some filter and post-processing is needed.
+
+##### Kalman filter
+We adopt Kalman filter on both received RSSI value and the calculated distance to eliminate the large variation. 
+
+
+
+
+
+##### Trangularation
 
  
 
