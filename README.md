@@ -64,8 +64,8 @@ eliminate the large variation. The Kalman filter is a state estimator that makes
 noisy measurements. The key is that it takes the history values as well as the uncertainty of measurements 
 into account. 
 
-<img src="./pic/HighKalmanGain.PNG">
-<img src="./pic/LowKalmanGain.PNG">
+<img src="./pic/HighKalmanGain.png">
+<img src="./pic/LowKalmanGain.png">
 
 ##### Triangulation
 After we obtain the distance from each AP with known location, we can do the triangulation to find the 
@@ -98,6 +98,7 @@ Moreover, the average window of three values is used for post-processing on calc
 
 ##### Path Following Result
 <img src="./pic/PathFollowing.PNG">
+![video link](./pic/MatlabLocation.mp4)
 
 #### 2. STM Control
 (資料處理)
