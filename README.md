@@ -33,38 +33,70 @@ GPS for localization. After surveying several papers, we adopt the RSSI distance
 
 ##### RSSI Distance Method
 The received signal strength indication (RSSI) distance method is one of the common choices for interior 
-positioning. Generally, it requires the received signal strength from the Bluetooth anchor points. Since the 
-signal strength would decay as the distance between transmitter and receiver increase, we can build a decaying 
+positioning. The RSSI value represents the power of a received radio signal. The higher the RSSI value, 
+the higher the signal strength. Moreover, since no additional sensors are required to measure RSSI values. 
+It becomes our first choice.
+
+RSSI distance method requires the received signal strength from the Bluetooth anchor points. The signal 
+strength would decay as the distance between transmitter and receiver increase. Thus, we can build a decaying 
 model and use the RSSI value to estimates the user’s distance respect to the anchor point. 
 
 (放隨距離decay的圖片)
 
-We use the mainstream logarithmic distance path-loss model to calculate the distance from the RSSI value. The 
-mathematical decaying model is expressed as below. `d` is the distance between the transmitter and the receiver, 
-and `n` is a decaying factor related to the specific wireless transmission environment. The initialization 
-process is essential to find the decaying factor `n`. 
+We use the mainstream logarithmic distance path-loss model to calculate the distance from the RSSI value. 
+The mathematical decaying model is expressed as below. `d` is the distance between the transmitter and 
+the receiver, and `n` is a decaying factor related to the specific wireless transmission environment. The 
+initialization process is essential to find the decaying factor `n`. 
 
 (距離公式)
 
 ##### RSSI Variation
-The variation of the received RSSI are unstable even in a well-controlled indoor scenario due to multipath 
-fading. There exist multiple different path for the signal to transmit from the transmitter to the receiver, 
-which may cause some interference so the actual received strength might be quite different from the calculated 
-model. Thus, some filter and post-processing is needed.
+Our model assumes that the RSSI value is only dependent on the distance between the two devices. However, 
+in reality, RSSI values are significantly influenced by the environment and noise caused by multi-path 
+fading. There exist multiple reflection paths for the signal to transmit from the transmitter to the 
+receiver, which may cause some interference so the actual received strength might be quite different from 
+the ideal model. As a result, the variation of the received RSSI are unstable even in a well-controlled 
+indoor scenario. Thus, some filter and post-processing is needed.
 
-##### Kalman filter
-We adopt Kalman filter on both received RSSI value and the calculated distance to eliminate the large variation. 
+##### Kalman Filter
+We adopt Kalman filter on both received RSSI value and the calculated distance to remove some noise and 
+eliminate the large variation. The Kalman filter is a state estimator that makes an estimate based on 
+noisy measurements. The key is that it takes the history values as well as the uncertainty of measurements 
+into account. 
 
+(機率圖 大K小K)
 
+##### Triangulation
+After we obtain the distance from each AP with known location, we can do the triangulation to find the 
+coordinate of the user. We use `scipy.optimize` library to find the optimized coordinate and minimize 
+the error.
 
+##### MQTT
+We use MQTT for the communication between Rpi and the server. MQTT is a publish-subscribe network 
+protocol that transports messages between devices, which is a great choice for communication between 
+different IOT sensors. 
 
+Rpi act as MQTT publisher and the server act as MQTT subscriber. The benefit of using MQTT is that the 
+message is organized in a hierarchy of topics. We can specify the topic for the publisher and subscriber. 
+In other words, it allows us to differentiate the message from different Rpi simply by the topic. The 
+subscriber can subscribe to multiple topic at the same time, and the publisher can publish their message 
+no matter the subscriber exist or not. This allows a great flexibility for our setting. 
 
-##### Trangularation
+In conclusion, we set four Rpi at each corner of the room. Each AP would publish time stamp and the 
+calculated distance to every 4 sec. When the server receives four distances with the same time stamp, it 
+would do triangulation to find coordinate. Average window = 3 for post-processing on calculated coordinate
+
 
  
 
 #### 2. STM Control
 
 #### 3. 3D Modeling
+
+
+### Reference
+[1] Chai, Song & An, Renbo & Du, Zhengzhong. (2016). "An Indoor Positioning Algorithm using Bluetooth Low Energy RSSI." 10.2991/amsee-16.2016.72. 
+[2] Kalman Filter: https://www.kalmanfilter.net/kalman1d.html
+
 
 
