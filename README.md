@@ -19,13 +19,29 @@ MineCraft engine.
 ### IV. Motivation
 It's not a easy task for people to design the interior decoration. Traditional interior design model are 
 usually accessed by mouses and keyboards. All the furnitures must be set up on the computer remotely, which 
-may be less straightforward.... Thus, we want to provide a more interactive and straightforward way, so that the user 
-can directly walk inside the new house and place the furniture at their wish. 
+may be less straightforward.... Thus, we want to provide a more interactive and straightforward way, so that 
+the user can directly walk inside the new house and place the furniture at their wish. 
 
 ### V. Contents
 
 #### 1. Interior Positioning 
+##### RSSI Distance Method
+The received signal strength indication (RSSI) distance method is one of the common choices for interior 
+positioning. Generally, it requires the received signal strength from the Bluetooth anchor points. Since the 
+signal strength would decay as the distance between transmitter and receiver increase, we can build a decaying 
+model and use the RSSI value to estimates the user’s distance respect to the anchor point. 
 
+(放隨距離decay的圖片)
+
+We use the logarithmic distance path-loss model to calculate the distance from the RSSI value. The mathematical 
+decaying model is expressed as below. `d` is the distance between the transmitter and the receiver, and `n` is 
+a decaying factor related to the specific wireless transmission environment. The initialization process is 
+essential to find the decaying factor `n`. 
+
+(距離公式)
+
+
+ 
 
 #### 2. STM Control
 
