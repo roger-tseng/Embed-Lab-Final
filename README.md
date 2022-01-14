@@ -25,6 +25,11 @@ the user can directly walk inside the new house and place the furniture at their
 ### V. Contents
 
 #### 1. Interior Positioning 
+##### Indoor positioning
+Compared with outdoor localization, the difficulty of indoor localization lies in the higher precision 
+requirement since we need to differentiate two points with small distance, which make it impractical to use 
+GPS for localization. After surveying several papers, we adopt the RSSI distance method for our positioning.
+
 ##### RSSI Distance Method
 The received signal strength indication (RSSI) distance method is one of the common choices for interior 
 positioning. Generally, it requires the received signal strength from the Bluetooth anchor points. Since the 
@@ -40,6 +45,7 @@ essential to find the decaying factor `n`.
 
 (距離公式)
 
+##### RSSI Distance Method
 
  
 
