@@ -41,7 +41,7 @@ RSSI distance method requires the received signal strength from the Bluetooth an
 strength would decay as the distance between transmitter and receiver increase. Thus, we can build a decaying 
 model and use the RSSI value to estimates the user’s distance respect to the anchor point. 
 
-(放隨距離decay的圖片)
+<img src="./pic/Decaying.png">
 
 We use the mainstream logarithmic distance path-loss model to calculate the distance from the RSSI value. 
 The mathematical decaying model is expressed as below. `d` is the distance between the transmitter and 
