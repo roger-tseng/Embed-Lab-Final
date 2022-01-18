@@ -3,7 +3,7 @@
 ### I. Author
 曾元 <br>
 林佩潁 B07901102 <br>
-邵家澤 <br>
+邵家澤 B07901081 <br>
 
 ### II. Demo slides and video
 https://docs.google.com/presentation/d/1oxG7fQ4YjdOL_rXL2Y6k44hEikNMTCKHO84AEx_ngOA/edit?usp=sharing
