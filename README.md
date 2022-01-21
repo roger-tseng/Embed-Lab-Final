@@ -107,6 +107,7 @@ We then read the sensors from the STM32 and send the instructions to the PC. The
 
 The compass function is formulated by the data combination of both accelerometer and magnetometer. Once we acquire the six axis of the data, the heading is obtained by the tilt compensation algorithm. Accelerometers sense the overall acceleration (gravity) ,meanwhile the magnetometer gives the direction of the magnetic north. Therefore with the algorithm, the 6 axis can be transformed the (row, pitch, yaw) directions, where the yaw is the heading we need for.
 
+Click the pic to play the video
 [![Watch the video](https://img.youtube.com/vi/dv1iVX8y734/maxresdefault.jpg)](https://youtu.be/dv1iVX8y734)
 
 #### 3. 3D Modeling
