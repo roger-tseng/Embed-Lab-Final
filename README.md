@@ -98,7 +98,9 @@ Moreover, the average window of three values is used for post-processing on calc
 
 ##### Path Following Result
 <img src="./pic/PathFollowing.PNG">
-![video link](./pic/MatlabLocation.mp4)
+Click the pic to play the video
+[![Watch the video](https://img.youtube.com/vi/ik8VA6-GeTE/maxresdefault.jpg)](https://youtu.be/ik8VA6-GeTE)
+
 
 #### 2. STM Control
 We set another STM32 as an remote controller to signal the PC end the detections on the board. They would become the APIs for the 3D Modelling. Making use of the MBed wifi example and the python file as a listener on PC, the STM32 and the PC are connected. 
