@@ -123,16 +123,19 @@ Click the pic to play the video
 (walking demo)
 
 Click the pic to play the video
-[![Watch the video](https://img.youtube.com/vi/b9p6RsYR72U/0.jpg)](https://youtu.be/b9p6RsYR72U)
+
+[![Watch the video](https://img.youtube.com/vi/b9p6RsYR72U/1.jpg)](https://youtu.be/b9p6RsYR72U)
 
 (minecraft demo)
 
 Click the pic to play the video
+
 [![Watch the video](https://img.youtube.com/vi/t6KeX71P_PE/0.jpg)](https://youtu.be/t6KeX71P_PE)
 
 
 ##### Recall
 Click the pic to play the video
+
 [![Watch the video](https://img.youtube.com/vi/USelW03oEgA/0.jpg)](https://youtu.be/USelW03oEgA)
 
 
