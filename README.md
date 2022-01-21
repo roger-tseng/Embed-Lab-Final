@@ -96,11 +96,12 @@ distance pair.
 
 Moreover, the average window of three values is used for post-processing on calculated result.
 
-##### Path Following Result
 <img src="./pic/PathFollowing.PNG">
-Click the pic to play the video
-[![Watch the video](https://img.youtube.com/vi/ik8VA6-GeTE/maxresdefault.jpg)](https://youtu.be/ik8VA6-GeTE)
 
+##### Path Following Demo
+Click the pic to play the video
+
+[![Watch the video](https://img.youtube.com/vi/ik8VA6-GeTE/0.jpg)](https://youtu.be/ik8VA6-GeTE)
 
 #### 2. STM Control
 We set another STM32 as an remote controller to signal the PC end the detections on the board. They would become the APIs for the 3D Modelling. Making use of the MBed wifi example and the python file as a listener on PC, the STM32 and the PC are connected. 
@@ -108,6 +109,8 @@ We set another STM32 as an remote controller to signal the PC end the detections
 We then read the sensors from the STM32 and send the instructions to the PC. The accelerometer is set to detect the movement of hands to signal the PC either it is pointing up or down, or flipping right or left. Since the hand movement is supposed to be big enough so that it can be executed, a simple threshold is set to aviod noises. 
 
 The compass function is formulated by the data combination of both accelerometer and magnetometer. Once we acquire the six axis of the data, the heading is obtained by the tilt compensation algorithm. Accelerometers sense the overall acceleration (gravity) ,meanwhile the magnetometer gives the direction of the magnetic north. Therefore with the algorithm, the 6 axis can be transformed the (row, pitch, yaw) directions, where the yaw is the heading we need for.
+
+##### STM Control Demo
 
 Click the pic to play the video
 [![Watch the video](https://img.youtube.com/vi/dv1iVX8y734/maxresdefault.jpg)](https://youtu.be/dv1iVX8y734)
