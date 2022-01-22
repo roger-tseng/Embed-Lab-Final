@@ -94,7 +94,14 @@ TBA
 
 ## Future Work
 - Synchronization:
-  Currently, our Raspberry Pi devices send data 
+
+  Currently, our Raspberry Pi devices send data only when the time stamp is the multiples of 4. So the server can check the time stamp to synchronize those four devices. When the server receives four distances with the same time stamp, it would do triangulation and find the coordinate.
+  
+  However, the process has resulted in the precision limitation since the time slot between two calculated positions would be at least 4 seconds. Not to mention that we may need to wait additional 4 seconds if one of the devices fail to scan the RSSI value. Since the update rate is limited, the response time of the indoor positioning would be slow, thus limit in precision scale. 
+  
+  As a result, we would like to find a different approach for the synchronization, such as using distributed key-value store instead of sending distance on MQTT. We may also skip the Kalman filtering on raw RSSI data, since now we can only get approximately three or four values in three seconds scanning time. The current filtering effect is not obvious because of inadequate amount of data. Thus, we may trade off the filtering precision for more data points.
+  
+  Moreover, the optimizing algorithm should be rewritten, since now we only optimize for the coordinate when all four distances are received. So when only three of the devices are found, we would not calculate the coordinate based on those distance pair. But it would waste a lot of time to wait for all four devices working properly. Thus, the algorithm should be able to handle both cases. We could also use a better RSSI scanner like ibeacon. 
   
 - Extending our system to function on actual 3D modelling software.
 
