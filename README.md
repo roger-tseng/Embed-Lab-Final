@@ -2,10 +2,14 @@
 <p align="center"> <i> Making interior decoration fun! </i> </p>
 <p align="right">曾元 B07901163 <br> 林佩潁 B07901102 <br> 邵家澤 B07901081</p>
 
-Slides for our final presentation can be found [here](https://docs.google.com/presentation/d/1oxG7fQ4YjdOL_rXL2Y6k44hEikNMTCKHO84AEx_ngOA/edit?usp=sharing).
+
 
 ## Motivation
-It's not a easy task for people to design the interior decoration. Traditional interior design model are usually accessed by mouses and keyboards. All the furnitures must be set up on the computer remotely, which may be less straightforward.... Thus, we want to provide a more interactive and straightforward way, so that the user can directly walk inside the new house and place the furniture at their wish. 
+Doing interior decoration is not easy. Traditional interior design is done by meticulously creating a 3D model of your house, then spending _agonizing_ hours in front of your computer, wondering where to put what. We want to make the process straightforward and interactive, so that users can walk around their new house and with a click, place furniture anywhere they like. 
+
+Slides for our final presentation can be found [here](https://docs.google.com/presentation/d/1oxG7fQ4YjdOL_rXL2Y6k44hEikNMTCKHO84AEx_ngOA/edit?usp=sharing).
+
+https://user-images.githubusercontent.com/67882177/150629294-a2e32ceb-b83c-4854-a24b-3dc0eb453503.mp4
 
 ## Abstract
 We use STM32 board and Raspberry Pis to create an interactive way for interior design. By setting up RSSI network, we can do the triangulation and find the user's location. The user can press the button on the STM32 board to trigger IRQ function for setting furniture. The STM32 board also supports accelerometer and magnetometer for motion and heading detection, which allows user to switch object and change facing direction. The user can walk around the room and place the furniture at anywhere he/she wants. We demonstrate our results with the Minecraft game engine.
@@ -85,10 +89,14 @@ https://user-images.githubusercontent.com/67882177/150630556-1b4def57-381d-4f25-
 
 https://user-images.githubusercontent.com/67882177/150630570-7791e832-d5a2-4c32-88e2-0d4ab2475527.mp4
 
+## Usage
+TBA
 
-#### Placing furniture with a click
-https://user-images.githubusercontent.com/67882177/150629294-a2e32ceb-b83c-4854-a24b-3dc0eb453503.mp4
-
+## Future Work
+- Synchronization:
+  Currently, our Raspberry Pi devices send data 
+  
+- Extending our system to function on actual 3D modelling software.
 
 ## References
 [1] Chai, Song & An, Renbo & Du, Zhengzhong. (2016). "An Indoor Positioning Algorithm using Bluetooth Low Energy RSSI," 10.2991/amsee-16.2016.72. 
